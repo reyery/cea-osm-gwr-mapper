@@ -1,0 +1,12 @@
+stub:
+  created_by: []
+  file_path: inputs/building-geometry/zone.shp
+  file_type: shp
+  schema:
+    columns:
+      Name:
+        description: Unique building ID. It must start with a letter.
+        type: string
+        unit: 'NA'
+        values: alphanumeric
+  used_by: []
