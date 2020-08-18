@@ -69,8 +69,8 @@ def reduce_building_properties(building_properties_df):
     out['number_floors'] = building_properties_df['number_floors'].max()
 
     # Get gross floor area of each property
-    building_properties_df['gross_floor_area'] = building_properties_df['building_area'] * building_properties_df[
-        'number_floors']
+    building_properties_df['gross_floor_area'] = building_properties_df['building_area'].fillna(1.0).astype(float) \
+                                                 * building_properties_df['number_floors']
 
     # Use building type with largest gross floor area
     building_type = building_properties_df[['building_type', 'gross_floor_area']].groupby('building_type').sum()
