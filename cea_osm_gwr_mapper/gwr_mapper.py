@@ -82,7 +82,7 @@ def reduce_building_properties(building_properties_df):
         percentage = percentage.round(5).sort_values(ascending=False).iloc[:num]
         percentage.iloc[-1] = round(1.0 - percentage.iloc[:-1].sum(), 5)
     out['occupancy_ratio'] = ';'.join(['{}:{}'.format(occupancy, ratio)
-                                       for occupancy, ratio in percentage.to_dict().items()])
+                                       for occupancy, ratio in zip(percentage.index.values, percentage.values)])
 
     # Use heating tech with largest gross floor area
     heating_tech = building_properties_df[['heating_tech_code', 'gross_floor_area']].groupby('heating_tech_code').sum()
