@@ -15,7 +15,7 @@ from cea.datamanagement.archetypes_mapper import archetypes_mapper
 from cea.utilities.dbf import dataframe_to_dbf, dbf_to_dataframe
 from shapely.geometry import Point
 
-from gwr_utils import read_gwr, LV95_PROJECTION, gwr_to_cea_code, filter_gwr_by_bounds
+from cea_osm_gwr_mapper.gwr_utils import read_gwr, LV95_PROJECTION, gwr_to_cea_code, filter_gwr_by_bounds
 
 __author__ = "Reynold Mok"
 __copyright__ = "Copyright 2020, Architecture and Building Systems - ETH Zurich"
