@@ -123,7 +123,7 @@ def generate_typology(properties_df, standard_definition_df):
 def gwr_mapper(config, locator):
     gwr_path = config.gwr_mapper.gwr_path
     zone_path = locator.get_zone_geometry()
-    surroundings_path = locator.get_surroundings_geometry()
+    # surroundings_path = locator.get_surroundings_geometry()
 
     gwr_df = read_gwr(gwr_path)
     zone_gdf = gpd.read_file(zone_path)

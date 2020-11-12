@@ -11,5 +11,5 @@ GWR Mapper:
                   'gwr-mapper:gwr-path']
     input-files:
       - [get_zone_geometry]
-      - [get_surroundings_geometry]
+#      - [get_surroundings_geometry]
       - [get_database_construction_standards]
