@@ -6,6 +6,8 @@ NOTE: This is an example of how to structure a cea plugin script. It is intentio
 from __future__ import division
 from __future__ import print_function
 
+import os
+
 import cea.config
 import cea.inputlocator
 import cea.plugin
@@ -175,7 +177,10 @@ def gwr_mapper(config, locator):
     typology_df = generate_typology(properties_df, standard_definition_df)
 
     print('Run CEA `archetypes-mapper` with generated building typology')
-    dataframe_to_dbf(typology_df, locator.get_building_typology())
+    typology_path = locator.get_building_typology()
+    if not os.path.exists(os.path.dirname(typology_path)):
+        os.makedirs(os.path.dirname(typology_path))
+    dataframe_to_dbf(typology_df, typology_path)
 
     mapper_flags = {'update_architecture_dbf': True,
                     'update_air_conditioning_systems_dbf': True,
